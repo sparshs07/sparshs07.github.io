@@ -6,6 +6,7 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/bee49699df.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 <!--  ============Header Section========  -->
@@ -15,21 +16,23 @@
             <nav>
                 <img src="" class="logo">
                 <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#header" style="--i:1">Home</a></li>
+                    <li><a href="#about" style="--i:2">About</a></li>
+                    <li><a href="#services" style="--i:3">Services</a></li>
+                    <li><a href="#portfolio" style="--i:4">Portfolio</a></li>
+                    <li><a href="#contact" style="--i:5">Contact</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
+        </div>
 
-            <div class="header-text">
-                <p>Java Developer</p>
-               <b> <h1>Hi,I am <span> Sparsh Shrivastava</span></b> </h1>
+        <div class="hero-container">
+            <div class="header-text info-side">
+                <h3 class="part-1">Hi,It's Me</h3>
+                 <h1>Sparsh Shrivastava</h1>
+                <h3 class="part-2">And I'am a <span id="changing-text">Java Developer</span> </h3>
             </div>
-
         </div>
     </div>
 <!--  ============Header Section END========  -->
@@ -87,33 +90,47 @@
 
 <!--  ============Services Section ========  -->
 
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Front-End Design</h2>
-                    <p>I excel in frontend development using <b> Tailwind CSS </b> and <b>Bootstrap </b>, creating visually appealing and responsive designs. My skills include leveraging Tailwind's utility-first approach for custom designs and Bootstrap's component library for rapid development. I focus on delivering clean, user-friendly interfaces that enhance overall user experience.</p>
-                    <a href="#">Learn More</a>
+<div id="services" class="relative py-16 bg-black overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <!-- Dynamic content: animated shapes -->
+        <div class="bg-blue-400 opacity-30 w-72 h-72 rounded-full blur-2xl absolute -top-16 -left-16 animate-pulse"></div>
+        <div class="bg-yellow-400 opacity-30 w-56 h-56 rounded-full blur-2xl absolute top-32 left-32 animate-ping"></div>
+        <div class="bg-pink-400 opacity-30 w-64 h-64 rounded-full blur-2xl absolute bottom-10 right-20 animate-bounce"></div>
+    </div>
+    <div class="container mx-auto text-center relative z-10">
+        <h1 class="text-5xl font-extrabold text-white mb-16">My Services</h1>
+        <div class="services-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="bg-gray-900 shadow-lg rounded-xl p-10 transform hover:rotate-3 hover:scale-105 transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500">
+                <div class="bg-gradient-to-r from-yellow-400 to-red-500 p-4 rounded-full inline-block mb-6">
+                    <i class="fa-solid fa-code text-white text-5xl"></i>
                 </div>
+                <h2 class="text-3xl font-semibold text-white mb-4">Front-End Design</h2>
+                <p class="text-gray-300 text-base mb-6">I excel in frontend development using <b class="text-white">Tailwind CSS</b> and <b class="text-white">Bootstrap</b>, creating visually appealing and responsive designs. My skills include leveraging Tailwind's utility-first approach for custom designs and Bootstrap's component library for rapid development.</p>
+                <a href="#" class="text-yellow-400 hover:text-yellow-300 font-bold text-lg">Learn More</a>
+            </div>
 
-                <div>
-                    <i class="fa-solid fa-crop"></i>
-                    <h2>Backend Design</h2>
-                    <p>I am skilled in <b> Advanced Java </b>and <b> Spring </b> for backend development, proficient in creating robust and scalable web applications. My expertise includes building RESTful APIs, implementing security protocols, and optimizing performance to ensure seamless user experiences. I am dedicated to delivering high-quality code and efficient solutions.</p>
-                    <a href="#">Learn More</a>
+            <div class="bg-gray-900 shadow-lg rounded-xl p-10 transform hover:rotate-3 hover:scale-105 transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-teal-500 hover:to-blue-500">
+                <div class="bg-gradient-to-r from-green-400 to-blue-500 p-4 rounded-full inline-block mb-6">
+                    <i class="fa-solid fa-crop text-white text-5xl"></i>
                 </div>
+                <h2 class="text-3xl font-semibold text-white mb-4">Backend Design</h2>
+                <p class="text-gray-300 text-base mb-6">I am skilled in <b class="text-white">Advanced Java</b> and <b class="text-white">Spring</b> for backend development, proficient in creating robust and scalable web applications. My expertise includes building RESTful APIs and optimizing performance.</p>
+                <a href="#" class="text-green-400 hover:text-green-300 font-bold text-lg">Learn More</a>
+            </div>
 
-                <div>
-                    <i class="fa-brands fa-app-store-ios"></i>
-                    <h2>API Design</h2>
-                    <p>I  specialize in API design using Spring, crafting robust and scalable RESTful services. My expertise includes designing efficient endpoints, implementing security measures, and ensuring seamless data integration. I focus on creating high-performance APIs that meet client needs and enhance overall application functionality.</p>
-                    <a href="#">Learn More</a>
+            <div class="bg-gray-900 shadow-lg rounded-xl p-10 transform hover:rotate-3 hover:scale-105 transition-all duration-700 ease-in-out hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500">
+                <div class="bg-gradient-to-r from-purple-400 to-pink-500 p-4 rounded-full inline-block mb-6">
+                    <i class="fa-brands fa-app-store-ios text-white text-5xl"></i>
                 </div>
+                <h2 class="text-3xl font-semibold text-white mb-4">API Design</h2>
+                <p class="text-gray-300 text-base mb-6">I specialize in API design using Spring, crafting robust and scalable RESTful services. My expertise includes designing efficient endpoints and ensuring seamless data integration.</p>
+                <a href="#" class="text-purple-400 hover:text-purple-300 font-bold text-lg">Learn More</a>
             </div>
         </div>
     </div>
+</div>
+
+
 <!--  ============Services Section ========  -->
 
 <!--  ============PortFolio Section ========  -->
@@ -130,7 +147,7 @@
                     <p>Engineered a dynamic and responsive website enabling users to effortlessly book tent items from diverse tenthouses for
                         any occasion!!
                         </p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://github.com/sparshs07/tentwale1"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="work">
@@ -146,7 +163,7 @@
                 <div class="layer">
                     <h3>ParkEase</h3>
                     <p>Revolutionize parking with our smart car parking website—efficient, user-friendly, and automated solutions for stress-free parking management.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://github.com/sparshs07/parkease"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
@@ -183,9 +200,13 @@
         </div>
     </div>
     <div class="copyright">
-        <p>Thanks for your patience!!</p>
+        <p>Thanks for checking my Portfolio</p>
     </div>
 </div>
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
 
 
 <script>
